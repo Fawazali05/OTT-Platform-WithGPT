@@ -70,3 +70,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+#features
+Login Sign-up page
+- Browse(after authentication)
+    - Header
+    Main Movie
+        Trailer in background
+        Title & description
+        movie sugestions
+            movie lists
+- Netflix GPT
+    - Search Bar
+    - Movie suggestions
