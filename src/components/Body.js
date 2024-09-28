@@ -14,7 +14,7 @@ const Body = ()=>{
         [
             {
                 path:"/",
-                element:<Login className="overflow-x-hidden "></Login>
+                element:<Login className=""></Login>
             },
             {
                 path:"/browse",
@@ -24,7 +24,7 @@ const Body = ()=>{
     )
 
       
-    return <div className="">
+    return <div className=" !overflow-x-hidden">
         <RouterProvider router={appRouter} />
     </div>
 }

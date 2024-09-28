@@ -11,7 +11,7 @@ function MovieBackground({id}) {
   const trailer =  useSelector((store) => store.movies?.trailer)
   
   return (
-    <div className='w-screen'>
+    <div className='w-screen overflow-x-hidden'>
       <iframe 
         className='w-screen aspect-video'
         

@@ -10,7 +10,7 @@ function MainContainer() {
   if(!movies) return
   // console.log("movies : ", movies);
   
-  const mainMovie = movies[2];
+  const mainMovie = movies[4];
   
   
   return (

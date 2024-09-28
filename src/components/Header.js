@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { auth } from '../utils/firebase';
 import { signOut } from 'firebase/auth';
 import { getAuth } from 'firebase/auth';
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser,removeUser } from '../utils/userSlice';
+import { toggleGptSearchView } from '../utils/gptSlice';
 export default function Header() {
 
   const navigate = useNavigate();
@@ -21,6 +22,12 @@ export default function Header() {
     // An error happened.
   });
 }
+
+  const handleGptSearch = ()=>{
+    console.log("in handle");
+    
+    dispatch(toggleGptSearchView())
+  }
 
 useEffect(()=>{
   const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -48,6 +55,7 @@ useEffect(()=>{
       alt="logo"
       ></img>
       <div>
+      <button className='bg-red-600 text-sm rounded-sm py-2 px-3' onClick={handleGptSearch}>GPT Search</button>
       <button className='font-bold text-white text-sm m-1' onClick={handleSignOut}>Sign out</button>
       <span className='text-sm'>{name && "Hello, " + name?.displayName }</span>
       </div>
