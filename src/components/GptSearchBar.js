@@ -10,7 +10,6 @@ function GptSearchBar() {
   const dispatch = useDispatch()
   const searchMovieTMDB = async(movie)=>{
     let url = TMDB_SEARCH_MOVIE_API + movie + "&include_adult=false&language=en-US&page=1";
-    console.log("url : ",url);
     const res = await fetch(url,options)
     const resjson = await res.json()
     console.log("resjson : ", resjson.results);
@@ -34,13 +33,9 @@ function GptSearchBar() {
     
     dispatch(setGptData({movies : data, gptResults : movieData}))
     }
-
     
-    
-
-
   return (
-    <div className='pt-[10%] flex justify-center relative z-50 '>
+    <div className='pt-[10%] flex justify-center relative '>
       <form className='w-1/2 grid-cols-12 bg-black bg-opacity-50 ' onSubmit={(e)=>e.preventDefault()}>
         <input 
         ref={searchText} 

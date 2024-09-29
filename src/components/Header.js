@@ -13,6 +13,7 @@ export default function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const name = useSelector((state)=>state?.user)
+  const gpt = useSelector((state)=> state?.gpt.showGptSearch)
   const handleSignOut = ()=>{
   const auth = getAuth();
   signOut(auth).then(() => {
@@ -23,7 +24,7 @@ export default function Header() {
   });
 }
 
-  const handleGptSearch = ()=>{
+  const handleGptSearch = ()=>{    
     console.log("in handle");
     
     dispatch(toggleGptSearchView())
@@ -55,9 +56,9 @@ useEffect(()=>{
       alt="logo"
       ></img>
       <div>
-      <button className='bg-red-600 text-sm rounded-sm py-2 px-3' onClick={handleGptSearch}>GPT Search</button>
+      <button className='bg-red-600 text-sm rounded-sm py-2 px-3' onClick={handleGptSearch}> { gpt ? "Home Page" : "GPT Search"}</button>
       <button className='font-bold text-white text-sm m-1' onClick={handleSignOut}>Sign out</button>
-      <span className='text-sm'>{name && "Hello, " + name?.displayName }</span>
+      <span className='text-sm text-white'>{name && "Hello, " + name?.displayName }</span>
       </div>
       
     </div>

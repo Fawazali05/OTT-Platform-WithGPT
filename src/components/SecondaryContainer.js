@@ -11,7 +11,7 @@ function SecondaryContainer() {
         {/* Movie Cards */}
       <div className='-mt-28'>
       <MovieList title={"Popular Movies"} movies={movies.popularMovies}></MovieList>
-      <MovieList title={"Trending Movies"} movies={movies.popularMovies}></MovieList>
+      <MovieList title={"Top-Rated Movies"} movies={movies.topRatedMovies}></MovieList>
       <MovieList title={"Critically Acclaimed"} movies={movies.popularMovies}></MovieList>
       <MovieList title={"Academy Award Winners"} movies={movies.popularMovies}></MovieList>
       </div>
