@@ -12,7 +12,6 @@ function GptSearchBar() {
     let url = TMDB_SEARCH_MOVIE_API + movie + "&include_adult=false&language=en-US&page=1";
     const res = await fetch(url,options)
     const resjson = await res.json()
-    console.log("resjson : ", resjson.results);
     return resjson.results;
   }
   
