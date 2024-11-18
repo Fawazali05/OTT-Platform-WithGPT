@@ -28,20 +28,23 @@ function GptSearchBar() {
     
     const movies = data.map((movie)=> searchMovieTMDB(movie))
     const movieData = await Promise.all(movies)
-    console.log("results : ", movieData);
+    let movieList = [] 
+    movieData.map((movie)=>{
+      movieList = [...movie]
+    })
     
     dispatch(setGptData({movies : data, gptResults : movieData}))
     }
     
   return (
-    <div className='pt-[10%] flex justify-center relative '>
-      <form className='w-1/2 grid-cols-12 bg-black bg-opacity-50 ' onSubmit={(e)=>e.preventDefault()}>
+    <div className='sm:pt-[10%] pt-[20%] flex justify-center relative '>
+      <form className='sm:w-1/2 w-3/4 grid-cols-12 flex bg-black bg-opacity-50 items-center px-4  ' onSubmit={(e)=>e.preventDefault()}>
         <input 
         ref={searchText} 
-        className='col-span-9 p-2 m-4 text-sm w-3/4 font-normal rounded-sm ' 
+        className='col-span-9 p-2 m-4 sm:text-sm text-xs w-3/4 font-normal rounded-sm ' 
         placeholder="What would you like to watch today?🍿" 
         type="text"></input>
-        <button  className='col-span-3 bg-red-600 p-2 text-white rounded-sm px-4 py-2 text-sm' 
+        <button  className='col-span-3 bg-red-600 p-2 text-white rounded-sm sm:px-4 sm:py-2 px-2 py-1 sm:text-sm text-xs h-fit' 
         onClick={handleSearch}>Search</button>
       </form>
     </div>

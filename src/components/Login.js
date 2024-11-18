@@ -16,7 +16,13 @@ const Login = ()=>{
     const password = useRef(null)
     const name = useRef(null)
      const handleClick = (e)=>{
-        const msg = checkValidData(email.current.value, password.current.value)        
+        console.log(" click");
+        
+        const msg = checkValidData(email.current.value, password.current.value)      
+        console.log("pass : ", password.current.value);
+        
+        console.log("msg : ", msg);
+          
         setError(msg)
         if(msg) return
 
@@ -25,6 +31,8 @@ const Login = ()=>{
             const auth = getAuth();
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
             .then((userCredential) => {
+                console.log("user : ", userCredential.user);
+                
                 // Signed up 
                 const user = userCredential.user;
                 const auth = getAuth();
@@ -64,6 +72,8 @@ const Login = ()=>{
     }
 
     const toggleSignIn = ()=>{
+        console.log(" toggle");
+        
         setisSignIn(!isSignIn)
     }
     

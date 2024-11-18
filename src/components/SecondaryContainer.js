@@ -12,8 +12,8 @@ function SecondaryContainer() {
       <div className='-mt-28'>
       <MovieList title={"Popular Movies"} movies={movies.popularMovies}></MovieList>
       <MovieList title={"Top-Rated Movies"} movies={movies.topRatedMovies}></MovieList>
-      <MovieList title={"Critically Acclaimed"} movies={movies.popularMovies}></MovieList>
-      <MovieList title={"Academy Award Winners"} movies={movies.popularMovies}></MovieList>
+      <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies}></MovieList>
+      <MovieList title={"Upcoming Movies"} movies={movies.upcomingMovies}></MovieList>
       </div>
     </div>
   )

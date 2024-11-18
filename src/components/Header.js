@@ -24,9 +24,7 @@ export default function Header() {
   });
 }
 
-  const handleGptSearch = ()=>{    
-    console.log("in handle");
-    
+  const handleGptSearch = ()=>{        
     dispatch(toggleGptSearchView())
   }
 
@@ -51,14 +49,14 @@ useEffect(()=>{
 
 
   return (
-    <div className='absolute w-full flex px-24 z-10 justify-between bg-gradient-to-b from-black to-transparent ' > 
-      <img className='w-48' src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
+    <div className='absolute w-screen flex sm:px-24 px-2 py-2 z-10 justify-between sm:bg-gradient-to-b from-black to-transparent sm:from-green-500 bg-black ' > 
+      <img className='sm:w-48 h-full w-24' src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
       alt="logo"
       ></img>
-      <div>
-      <button className='bg-red-600 text-sm rounded-sm py-2 px-3' onClick={handleGptSearch}> { gpt ? "Home Page" : "GPT Search"}</button>
-      <button className='font-bold text-white text-sm m-1' onClick={handleSignOut}>Sign out</button>
-      <span className='text-sm text-white'>{name && "Hello, " + name?.displayName }</span>
+      <div className='flex items-center'>
+      <button className='bg-red-600 sm:text-sm rounded-sm sm:py-2 px-3  py-1 text-xs' onClick={handleGptSearch}> { gpt ? "Home Page" : "GPT Search"}</button>
+      <button className='font-bold text-white sm:text-sm text-xs m-1' onClick={handleSignOut}>Sign out</button>
+      <span className='sm:text-sm text-xs text-white'>{name && "Hello, " + name?.displayName }</span>
       </div>
       
     </div>

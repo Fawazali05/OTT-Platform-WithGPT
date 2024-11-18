@@ -2,8 +2,6 @@ import React from 'react'
 import MovieCard from './MovieCard'
 
 function MovieList({title,movies}) {
-  console.log("title : ", title);
-  console.log(" movies : ", movies);
   
       
   return (

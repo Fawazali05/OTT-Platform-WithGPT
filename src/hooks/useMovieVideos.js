@@ -15,14 +15,13 @@ const useMovieVideos = (id)=>{
         const json = await videos.json()
 
         const filteredData = json.results.filter(video => (video.type === "Trailer"))
-        const trailer = filteredData.length ? filteredData[0] : json.results[0] 
+        const trailer = filteredData.length ? filteredData[1] : json.results[1] 
     
         dispatch(addTrailer(trailer))
       }
       catch(error)
       {
-        console.log("error  :", error);
-        
+        console.error("error  :", error);
       }
     };
 
