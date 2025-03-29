@@ -49,7 +49,7 @@ useEffect(()=>{
 
 
   return (
-    <div className='absolute w-screen flex sm:px-24 px-2 py-2 z-10 justify-between sm:bg-gradient-to-b from-black to-transparent sm:from-green-500 bg-black ' > 
+    <div className='absolute w-screen flex sm:px-24 px-2 py-2 z-10 justify-between sm:bg-gradient-to-b from-black to-transparent sm:from-green-500 bg-black sm:w-screen' > 
       <img className='sm:w-48 h-full w-24' src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
       alt="logo"
       ></img>
@@ -58,7 +58,6 @@ useEffect(()=>{
       <button className='font-bold text-white sm:text-sm text-xs m-1' onClick={handleSignOut}>Sign out</button>
       <span className='sm:text-sm text-xs text-white'>{name && "Hello, " + name?.displayName }</span>
       </div>
-      
     </div>
   )
 }
